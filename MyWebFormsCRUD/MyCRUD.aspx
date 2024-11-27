@@ -5,14 +5,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title></title>    
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
         <table width="100%" border="1">
             <tr>
-                <td bgcolor="green" width="33%" height="150">1</td>
+                <td bgcolor="green" width="33%" height="150">
+                    <asp:DropDownList ID="cbCategory" runat="server" CssClass="form-select" DataTextField="name" DataValueField="id">
+                    </asp:DropDownList>
+                </td>
                 <td bgcolor="red" width="33%" height="150">2</td>
                 <td bgcolor="yellow" width="33%" height="150">3</td>
             </tr>
