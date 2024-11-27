@@ -22,3 +22,18 @@ VALUES
 ('RAP'),
 ('JAZZ')
 
+ALTER TABLE Music
+ADD CONSTRAINT FK_category_id
+FOREIGN KEY (category_id) REFERENCES Category(id)
+
+INSERT INTO Music(name, author, category_id, description)
+VALUES
+(N'Ласковый май', N'Кузнецов', 1, N'лирическая песня 90 годов'),
+(N'LeapSteak', N'9mice', 2, N'песня ни о чем')
+
+SELECT m.id,
+		m.name,
+		m.author,
+		c.category,
+		m.description		
+FROM Category c JOIN Music m ON c.id = m.category_id
