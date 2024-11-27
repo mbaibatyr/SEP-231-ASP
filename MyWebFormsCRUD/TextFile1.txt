@@ -38,7 +38,7 @@ SELECT m.id,
 		m.description		
 FROM Category c JOIN Music m ON c.id = m.category_id
 
-CREATE proc pGetMusic --null
+CREATE proc pGetMusic --3
 @category_id int
 AS
 SELECT m.id,
@@ -48,3 +48,10 @@ SELECT m.id,
 		m.description		
 FROM Category c JOIN Music m ON c.id = m.category_id
 WHERE (@category_id IS NULL OR m.category_id = @category_id)
+
+CREATE proc pGetCategory
+AS
+SELECT id,
+		category name
+FROM Category
+ORDER by category
