@@ -55,5 +55,10 @@ namespace MyWebFormsCRUD
         {
             GetMusic();
         }
+
+        protected void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GetMusic();
+        }
     }
 }
