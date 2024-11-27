@@ -15,12 +15,15 @@
                 <td bgcolor="green" width="33%" height="150">
                     <asp:DropDownList ID="cbCategory" runat="server" CssClass="form-select" DataTextField="name" DataValueField="id">
                     </asp:DropDownList>
+                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
                 </td>
                 <td bgcolor="red" width="33%" height="150">2</td>
                 <td bgcolor="yellow" width="33%" height="150">3</td>
             </tr>
             <tr>
-                <td bgcolor="blue" width="100%" colspan="3" height="800">4</td>
+                <td bgcolor="blue" width="100%" colspan="3" height="800">4<asp:GridView ID="GvMusic" runat="server" Height="224px" Width="1142px">
+                    </asp:GridView>
+                </td>
             </tr>
         </table>
     </form>
