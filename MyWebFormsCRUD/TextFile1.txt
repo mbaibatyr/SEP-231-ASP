@@ -1,0 +1,24 @@
+﻿CREATE TABLE Music
+(
+	id int identity primary key,
+	name nvarchar(200),
+	author nvarchar(200),
+	category_id int,
+	description nvarchar(200)
+)
+
+
+CREATE TABLE Category
+(
+	id int identity primary key,
+	category nvarchar(200)
+)
+
+
+INSERT INTO Category(category)
+VALUES
+('POP'),
+('ROCK'),
+('RAP'),
+('JAZZ')
+

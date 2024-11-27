@@ -11,9 +11,9 @@
     <form id="form1" runat="server">
         <table width="100%" border="1">
             <tr>
-                <td bgcolor="green" width="33%" height="100">1</td>
-                <td bgcolor="red" width="33%" height="100">2</td>
-                <td bgcolor="yellow" width="33%" height="100">3</td>
+                <td bgcolor="green" width="33%" height="150">1</td>
+                <td bgcolor="red" width="33%" height="150">2</td>
+                <td bgcolor="yellow" width="33%" height="150">3</td>
             </tr>
             <tr>
                 <td bgcolor="blue" width="100%" colspan="3" height="800">4</td>
