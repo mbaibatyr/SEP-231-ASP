@@ -90,5 +90,18 @@ namespace MyWebFormsCRUD
         {
             MusicAdd();
         }
+
+        protected void btClear_Click(object sender, EventArgs e)
+        {
+            tbName.Text = "";
+            tbAuthor.Text = "";
+            tbDesc.Text = "";
+        }
+
+        protected void GvMusic_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tbName.Text = GvMusic.DataKeys[GvMusic.SelectedIndex].Values[2].ToString();
+            music_id.Value = GvMusic.DataKeys[GvMusic.SelectedIndex].Values[0].ToString();
+        }
     }
 }

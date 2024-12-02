@@ -78,6 +78,24 @@ namespace MyWebFormsCRUD
         protected global::System.Web.UI.WebControls.Button btIns;
 
         /// <summary>
+        /// btClear элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически созданное поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btClear;
+
+        /// <summary>
+        /// music_id элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически созданное поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField music_id;
+
+        /// <summary>
         /// GvMusic элемент управления.
         /// </summary>
         /// <remarks>

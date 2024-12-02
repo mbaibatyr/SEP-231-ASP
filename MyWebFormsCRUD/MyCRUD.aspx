@@ -25,7 +25,11 @@
                         <tr><td> <asp:DropDownList ID="cbCategory2" runat="server" CssClass="form-select" DataTextField="name" DataValueField="id">
                          </asp:DropDownList></td></tr>
                         <tr><td>
-                            <asp:Button ID="btIns" runat="server" Text="Добавить" OnClick="btIns_Click"></asp:Button></td></tr>
+                            <asp:Button ID="btIns" runat="server" Text="Добавить" OnClick="btIns_Click"></asp:Button>
+                            <asp:Button ID="btClear" runat="server" Text="Очистить" OnClick="btClear_Click"></asp:Button>
+                            <asp:HiddenField ID="music_id" runat="server"></asp:HiddenField>
+                            </td>
+                        </tr>
                     </table>
 
                 </td>
@@ -33,9 +37,9 @@
             </tr>
             <tr>
                 <td bgcolor="blue" width="100%" colspan="3" height="800">
-                    <asp:GridView ID="GvMusic" runat="server" CssClass="GridView_With_GridLines" DataKeyNames="id,name"
-            AllowPaging="True" BackColor="White" BorderColor="#3366CC" BorderStyle="None"
-            BorderWidth="1px" CellPadding="4" PageSize="21" AutoGenerateColumns="False">
+                    <asp:GridView ID="GvMusic" runat="server" CssClass="GridView_With_GridLines" DataKeyNames="id,name,author,category,description"
+                        AllowPaging="True" BackColor="White" BorderColor="#3366CC" BorderStyle="None"
+                        BorderWidth="1px" CellPadding="4" PageSize="21" AutoGenerateColumns="False" OnSelectedIndexChanged="GvMusic_SelectedIndexChanged">
             <RowStyle BackColor="White" ForeColor="#003399" />
             <SelectedRowStyle BackColor="#FFD789" BorderStyle="Groove" BorderWidth="2" />
             <PagerSettings Position="TopAndBottom" />
