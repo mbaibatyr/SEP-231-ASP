@@ -58,6 +58,10 @@
                     <HeaderStyle HorizontalAlign="Center" />
                     <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Width="700px" />
                 </asp:BoundField>
+                <asp:BoundField DataField="category" HeaderText="Категория">
+                    <HeaderStyle HorizontalAlign="Center" />
+                    <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Width="700px" />
+                </asp:BoundField>
             </Columns>
             <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
             <HeaderStyle CssClass="GridView_With_GridLines_Header" ForeColor="#CCCCFF" HorizontalAlign="Left"
