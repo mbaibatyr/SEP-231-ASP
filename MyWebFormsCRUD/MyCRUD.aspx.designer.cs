@@ -33,15 +33,6 @@ namespace MyWebFormsCRUD
         protected global::System.Web.UI.WebControls.DropDownList cbCategory;
 
         /// <summary>
-        /// Button1 элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически созданное поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-
-        /// <summary>
         /// tbName элемент управления.
         /// </summary>
         /// <remarks>
@@ -76,6 +67,15 @@ namespace MyWebFormsCRUD
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cbCategory2;
+
+        /// <summary>
+        /// btIns элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически созданное поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btIns;
 
         /// <summary>
         /// GvMusic элемент управления.

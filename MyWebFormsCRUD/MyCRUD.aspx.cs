@@ -27,6 +27,7 @@ namespace MyWebFormsCRUD
             }
             cbCategory.DataSource = dt;
             cbCategory.DataBind();
+            cbCategory.Items.Insert(0, "Выбрать все");
         }
 
         void GetMusic()
@@ -38,7 +39,8 @@ namespace MyWebFormsCRUD
                 using (SqlCommand cmd = new SqlCommand("pGetMusic", db))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@category_id", cbCategory.SelectedValue);
+                    if(cbCategory.SelectedIndex != 0)
+                        cmd.Parameters.AddWithValue("@category_id", cbCategory.SelectedValue);
                     dt.Load(cmd.ExecuteReader());
                 }
                 db.Close();
@@ -49,13 +51,13 @@ namespace MyWebFormsCRUD
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
+            {
                 GetCategory();
+                GetMusic();
+            }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            GetMusic();
-        }
+       
 
         protected void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
