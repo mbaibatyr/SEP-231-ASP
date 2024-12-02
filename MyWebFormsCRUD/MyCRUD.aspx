@@ -17,7 +17,16 @@
                     </asp:DropDownList>
                     <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
                 </td>
-                <td bgcolor="red" width="33%" height="150">2</td>
+                <td bgcolor="red" width="33%" height="150">
+                    <table  width="100%">
+                        <tr><td><asp:TextBox ID="tbName" runat="server"  CssClass="form-control"></asp:TextBox></td></tr>
+                        <tr><td><asp:TextBox ID="tbAuthor" runat="server"  CssClass="form-control"></asp:TextBox></td></tr>
+                        <tr><td><asp:TextBox ID="tbDesc" runat="server"  CssClass="form-control"></asp:TextBox></td></tr>
+                        <tr><td> <asp:DropDownList ID="cbCategory2" runat="server" CssClass="form-select" DataTextField="name" DataValueField="id">
+                         </asp:DropDownList></td></tr>
+                    </table>
+
+                </td>
                 <td bgcolor="yellow" width="33%" height="150">3</td>
             </tr>
             <tr>
