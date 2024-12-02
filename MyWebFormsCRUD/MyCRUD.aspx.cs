@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace MyWebFormsCRUD
         void GetCategory()
         {
             DataTable dt = new DataTable();
-            using (SqlConnection db = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\байбатыровм\\Documents\\MyDB.mdf;Integrated Security=True;Connect Timeout=30"))
+            using (SqlConnection db = new SqlConnection(ConfigurationManager.AppSettings["db"]))
             {
                 db.Open();
                 using (SqlCommand cmd = new SqlCommand("pGetCategory", db))
@@ -31,7 +32,7 @@ namespace MyWebFormsCRUD
         void GetMusic()
         {
             DataTable dt = new DataTable();
-            using (SqlConnection db = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\байбатыровм\\Documents\\MyDB.mdf;Integrated Security=True;Connect Timeout=30"))
+            using (SqlConnection db = new SqlConnection(ConfigurationManager.AppSettings["db"]))
             {
                 db.Open();
                 using (SqlCommand cmd = new SqlCommand("pGetMusic", db))
