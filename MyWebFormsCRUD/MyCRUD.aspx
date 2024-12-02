@@ -25,7 +25,7 @@
                         <tr><td> <asp:DropDownList ID="cbCategory2" runat="server" CssClass="form-select" DataTextField="name" DataValueField="id">
                          </asp:DropDownList></td></tr>
                         <tr><td>
-                            <asp:Button ID="btIns" runat="server" Text="Добавить"></asp:Button></td></tr>
+                            <asp:Button ID="btIns" runat="server" Text="Добавить" OnClick="btIns_Click"></asp:Button></td></tr>
                     </table>
 
                 </td>
