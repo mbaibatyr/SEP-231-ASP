@@ -1,13 +1,11 @@
-﻿using DocumentFormat.OpenXml.Drawing.Charts;
+﻿using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Drawing.Charts;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.IO;
+using DataTable = System.Data.DataTable;
 
 namespace MyWebFormsCRUD
 {
@@ -22,16 +20,27 @@ namespace MyWebFormsCRUD
                 using (SqlCommand cmd = new SqlCommand("pGetMusic", db))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    if (cbCategory.SelectedIndex != 0)
-                        cmd.Parameters.AddWithValue("@category_id", cbCategory.SelectedValue);
                     dt.Load(cmd.ExecuteReader());
                 }
                 db.Close();
+                return dt;
             }
         }
         void MakeExcel()
         {
-
+            var dt = GetData();
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                var ws = wb.AddWorksheet(dt, "report");
+                ws.Columns("B").AdjustToContents();
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    wb.SaveAs(ms);
+                    //ms.CopyTo(Response.OutputStream);
+                    Response.OutputStream.Write(ms.ToArray(), 0, (int)ms.Length);
+                    Response.End();
+                }
+            }
         }
         protected void Page_Load(object sender, EventArgs e)
         {
