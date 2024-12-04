@@ -32,7 +32,7 @@ namespace MyWebFormsCRUD
             using (XLWorkbook wb = new XLWorkbook())
             {
                 var ws = wb.AddWorksheet(dt, "report");
-                //ws.Columns("B").AdjustToContents();
+                ws.Columns("F").AdjustToContents();
                 using (MemoryStream ms = new MemoryStream())
                 {
                     wb.SaveAs(ms);
@@ -47,7 +47,7 @@ namespace MyWebFormsCRUD
             {
                 case "0":
                     var bytes = MakeExcel();
-                    Response.Write("Excel");
+                    //Response.Write("Excel");
                     Response.Clear();
                     Response.ContentType = "application/octet-stream";
                     Response.AddHeader("Content-Disposition", string.Format("attachment; filename={0}", "report.xlsx"));
