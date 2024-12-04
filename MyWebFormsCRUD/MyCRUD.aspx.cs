@@ -107,5 +107,30 @@ namespace MyWebFormsCRUD
             cbCategory2.SelectedValue = GvMusic.DataKeys[GvMusic.SelectedIndex].Values[3].ToString();
             tbDesc.Text = GvMusic.DataKeys[GvMusic.SelectedIndex].Values[4].ToString();
         }
+
+        void MusicEdit()
+        {
+            using (SqlConnection db = new SqlConnection(ConfigurationManager.AppSettings["db"]))
+            {
+                db.Open();
+                using (SqlCommand cmd = new SqlCommand("pMusicEdit", db))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id", music_id.Value);
+                    cmd.Parameters.AddWithValue("@name", tbName.Text);
+                    cmd.Parameters.AddWithValue("@author", tbAuthor.Text);
+                    cmd.Parameters.AddWithValue("@category_id", cbCategory2.SelectedValue);
+                    cmd.Parameters.AddWithValue("@description", tbDesc.Text);
+                    cmd.ExecuteNonQuery();
+                }
+                GetMusic();
+                db.Close();
+            }
+        }
+
+        protected void btUpd_Click(object sender, EventArgs e)
+        {
+            MusicEdit();
+        }
     }
 }

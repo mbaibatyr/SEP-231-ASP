@@ -78,6 +78,15 @@ namespace MyWebFormsCRUD
         protected global::System.Web.UI.WebControls.Button btIns;
 
         /// <summary>
+        /// btUpd элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически созданное поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btUpd;
+
+        /// <summary>
         /// btClear элемент управления.
         /// </summary>
         /// <remarks>

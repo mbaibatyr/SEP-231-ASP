@@ -26,6 +26,7 @@
                          </asp:DropDownList></td></tr>
                         <tr><td>
                             <asp:Button ID="btIns" runat="server" Text="Добавить" OnClick="btIns_Click"></asp:Button>
+                            <asp:Button ID="btUpd" runat="server" Text="Изменить" OnClick="btUpd_Click"></asp:Button>
                             <asp:Button ID="btClear" runat="server" Text="Очистить" OnClick="btClear_Click"></asp:Button>
                             <asp:HiddenField ID="music_id" runat="server"></asp:HiddenField>
                             </td>
