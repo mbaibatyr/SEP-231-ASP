@@ -26,19 +26,17 @@ namespace MyWebFormsCRUD
                 return dt;
             }
         }
-        void MakeExcel()
+        byte[] MakeExcel()
         {
             var dt = GetData();
             using (XLWorkbook wb = new XLWorkbook())
             {
                 var ws = wb.AddWorksheet(dt, "report");
-                ws.Columns("B").AdjustToContents();
+                //ws.Columns("B").AdjustToContents();
                 using (MemoryStream ms = new MemoryStream())
                 {
                     wb.SaveAs(ms);
-                    //ms.CopyTo(Response.OutputStream);
-                    Response.OutputStream.Write(ms.ToArray(), 0, (int)ms.Length);
-                    Response.End();
+                    return ms.ToArray();
                 }
             }
         }
@@ -48,7 +46,16 @@ namespace MyWebFormsCRUD
             switch (p)
             {
                 case "0":
+                    var bytes = MakeExcel();
                     Response.Write("Excel");
+                    Response.Clear();
+                    Response.ContentType = "application/octet-stream";
+                    Response.AddHeader("Content-Disposition", string.Format("attachment; filename={0}", "report.xlsx"));
+
+                    //ms.CopyTo(Response.OutputStream);
+                    Response.OutputStream.Write(bytes, 0, (int)bytes.Length);
+                    Response.End();
+
                     break;
                 case "1":
                     Response.Write("CSV");
