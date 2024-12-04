@@ -37,7 +37,7 @@
             </tr>
             <tr>
                 <td bgcolor="blue" width="100%" colspan="3" height="800">
-                    <asp:GridView ID="GvMusic" runat="server" CssClass="GridView_With_GridLines" DataKeyNames="id,name,author,category,description"
+                    <asp:GridView ID="GvMusic" runat="server" CssClass="GridView_With_GridLines" DataKeyNames="id,name,author,category_id,description"
                         AllowPaging="True" BackColor="White" BorderColor="#3366CC" BorderStyle="None"
                         BorderWidth="1px" CellPadding="4" PageSize="21" AutoGenerateColumns="False" OnSelectedIndexChanged="GvMusic_SelectedIndexChanged">
             <RowStyle BackColor="White" ForeColor="#003399" />
@@ -66,6 +66,14 @@
                     <HeaderStyle HorizontalAlign="Center" />
                     <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Width="700px" />
                 </asp:BoundField>
+                <asp:BoundField DataField="category_id" HeaderText="ID Категории">
+                    <HeaderStyle HorizontalAlign="Center" />
+                    <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Width="700px" />
+                </asp:BoundField>
+                <asp:BoundField DataField="author" HeaderText="Автор">
+                    <HeaderStyle HorizontalAlign="Center" />
+                    <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Width="700px" />
+                </asp:BoundField>                
             </Columns>
             <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
             <HeaderStyle CssClass="GridView_With_GridLines_Header" ForeColor="#CCCCFF" HorizontalAlign="Left"

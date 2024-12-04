@@ -39,13 +39,12 @@ SELECT m.id,
 FROM Category c JOIN Music m ON c.id = m.category_id
 
 CREATE proc pGetMusic --3
-@category_id int = NULL
+@category_id int
 AS
 SELECT m.id,
 		m.name,
 		m.author,
 		c.category,
-		m.category_id,
 		m.description		
 FROM Category c JOIN Music m ON c.id = m.category_id
 WHERE (@category_id IS NULL OR m.category_id = @category_id)
@@ -56,15 +55,3 @@ SELECT id,
 		category name
 FROM Category
 ORDER by category
-
-
-CREATE PROC pMusicAdd
-@name nvarchar(200),
-@author nvarchar(200),
-@category_id int,
-@description nvarchar(500)
-AS
-INSERT INTO Music
-(name, author, category_id, description)
-VALUES
-(@name, @author, @category_id, @description)
