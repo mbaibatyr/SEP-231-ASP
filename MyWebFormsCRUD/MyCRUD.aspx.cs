@@ -54,13 +54,11 @@ namespace MyWebFormsCRUD
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
-            {
+            {                
                 GetCategory();
                 GetMusic();
             }
-        }
-
-       
+        }       
 
         protected void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -131,6 +129,11 @@ namespace MyWebFormsCRUD
         protected void btUpd_Click(object sender, EventArgs e)
         {
             MusicEdit();
+        }
+
+        protected void btReport_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Report.aspx?param1=" + cbReport.SelectedIndex);
         }
     }
 }

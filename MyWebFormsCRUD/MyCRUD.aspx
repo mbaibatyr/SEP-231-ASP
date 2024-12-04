@@ -6,7 +6,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />   
 </head>
 <body>
     <form id="form1" runat="server">
@@ -26,7 +26,7 @@
                          </asp:DropDownList></td></tr>
                         <tr><td>
                             <asp:Button ID="btIns" runat="server" Text="Добавить" OnClick="btIns_Click"></asp:Button>
-                            <asp:Button ID="btUpd" runat="server" Text="Изменить" OnClick="btUpd_Click"></asp:Button>
+                            <asp:Button ID="btUpd" runat="server" Text="Изменить" OnClick="btUpd_Click" OnClientClick="return confirm('Изменить запись?');"></asp:Button>
                             <asp:Button ID="btClear" runat="server" Text="Очистить" OnClick="btClear_Click"></asp:Button>
                             <asp:HiddenField ID="music_id" runat="server"></asp:HiddenField>
                             </td>
@@ -34,7 +34,13 @@
                     </table>
 
                 </td>
-                <td bgcolor="yellow" width="33%" height="150">3</td>
+                <td bgcolor="yellow" width="33%" height="150">
+                      <asp:DropDownList ID="cbReport" runat="server" CssClass="form-select" DataTextField="name" DataValueField="id">
+                          <asp:ListItem Selected="True">Excel</asp:ListItem>
+                          <asp:ListItem>CSV</asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:Button ID="btReport" runat="server" Text="Выгрузить" CssClass="btn btn-info" OnClick="btReport_Click" ></asp:Button>
+                </td>
             </tr>
             <tr>
                 <td bgcolor="blue" width="100%" colspan="3" height="800">
