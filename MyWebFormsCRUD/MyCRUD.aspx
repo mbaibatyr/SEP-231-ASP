@@ -66,7 +66,7 @@
                     <HeaderStyle HorizontalAlign="Center" />
                     <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Width="700px" />
                 </asp:BoundField>
-                <asp:BoundField DataField="category_id" HeaderText="ID Категории">
+                <asp:BoundField DataField="category_id" HeaderText="ID Категории" Visible="False">
                     <HeaderStyle HorizontalAlign="Center" />
                     <ItemStyle HorizontalAlign="Left" VerticalAlign="Top" Width="700px" />
                 </asp:BoundField>

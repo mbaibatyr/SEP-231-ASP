@@ -100,7 +100,7 @@ namespace MyWebFormsCRUD
 
         protected void GvMusic_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //id,name,author,category,description            
+            //id,name,author,category_id,description            
             music_id.Value = GvMusic.DataKeys[GvMusic.SelectedIndex].Values[0].ToString();
             tbName.Text = GvMusic.DataKeys[GvMusic.SelectedIndex].Values[1].ToString();
             tbAuthor.Text = GvMusic.DataKeys[GvMusic.SelectedIndex].Values[2].ToString();
