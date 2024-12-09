@@ -28,6 +28,19 @@ namespace MyMVC.Controllers
             ViewData["STEP"] = "Hello Step";
             ViewBag.world = "Hello world";
             ViewData["city"] = new City() { id=1, name = "Astana"};
+            ViewData["city_list"] = new List<City>()
+            {
+                new City{ id = 1, name = "Astana" },
+                new City{ id = 2, name = "Almaty" },
+            };
+
+            ViewBag.city_list = new List<City>()
+            {
+                new City{ id = 1, name = "Astana" },
+                new City{ id = 2, name = "Almaty" },
+            };
+
+
             return View();
         }     
 

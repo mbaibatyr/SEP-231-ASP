@@ -2,14 +2,34 @@
 @{
     ViewData["Title"] = "Contacts";
 }
+
 @{
+    var list = (List<City>)ViewData["city_list"];    
+    <select>
+    @foreach (var item in list)
+    {
+       <option value='@item.id'>@item.name</option>
+    }
+    </select>
+
+    var list2 = ViewBag.city_list;
+    <select>
+        @foreach (var item in list2)
+        {
+            <option value='@item.id'>@item.name</option>
+        }
+    </select>
+}
+
+
+@* @{
     var city = ViewData["city"] as City;
     var id = city.id;
     var name = city.name;
-}
+} *@
 
-id = @id
-name = @name
+ @* id = @id
+ name = @name *@
 
 
  @* @ViewData["step"]; *@
