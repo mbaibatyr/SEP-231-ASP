@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "Contacts";
+}
+@{
+    var city = ViewData["city"] as City;
+    var id = city.id;
+    var name = city.name;
+}
+
+id = @id
+name = @name
+
+
+ @* @ViewData["step"]; *@
+
+@* <h2>@ViewBag.world</h2>
+
+<h1>Contacts</h1>
+
+@section step
+{
+    Hello STEP!!!!
+} *@
+
