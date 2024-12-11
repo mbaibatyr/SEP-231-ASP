@@ -1,0 +1,22 @@
+﻿@model MyMVC.Models.City
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+    <h4>City</h4>
+  
+@Html.DisplayFor(model => model.id)
+@Html.DisplayFor(model => model.name)
+
+
+
+@{
+    var city = ViewData["city"] as City;
+    var id = city.id;
+    var name = city.name;
+}
+<h2>@id</h2>
+<h2>@name</h2>
