@@ -11,6 +11,7 @@ namespace MyMVC
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<ICity, CityService>();
 
             var app = builder.Build();
 
