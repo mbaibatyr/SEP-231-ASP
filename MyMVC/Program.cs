@@ -1,3 +1,6 @@
+using MyMVC.Abstract;
+using MyMVC.Service;
+
 namespace MyMVC
 {
     public class Program
@@ -24,7 +27,7 @@ namespace MyMVC
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Samples}/{action=Index}/{id?}");
+                pattern: "{controller=City}/{action=Index}/{id?}");
 
             app.Run();
         }
