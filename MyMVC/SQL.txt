@@ -1,0 +1,43 @@
+﻿USE [MyDB]
+GO
+/****** Object:  StoredProcedure [dbo].[pCity]    Script Date: 18.12.2024 19:58:31 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[pCity] -- GetAllCity
+as
+select id,
+		name
+from city
+order by name
+GO
+/****** Object:  NumberedStoredProcedure [dbo].[pCity];2    Script Date: 18.12.2024 19:58:31 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[pCity];2 -- GetCityById
+@id int
+as
+/*
+	pCity;2 4
+*/
+select id,
+		name
+from city
+where id = @id
+GO
+/****** Object:  NumberedStoredProcedure [dbo].[pCity];3    Script Date: 18.12.2024 19:58:31 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[pCity];3 -- CityAdd
+@name nvarchar(100)
+/*
+	pCity;3 N'Москва'
+*/
+as
+insert into city (name)
+values (@name)
