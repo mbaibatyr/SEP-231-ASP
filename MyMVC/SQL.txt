@@ -1,5 +1,12 @@
 ﻿USE [MyDB]
 GO
+
+CREATE TABLE City(
+	[id] [int] IDENTITY primary key,
+	[name] [nvarchar](100)
+)
+
+
 /****** Object:  StoredProcedure [dbo].[pCity]    Script Date: 18.12.2024 19:58:31 ******/
 SET ANSI_NULLS ON
 GO
