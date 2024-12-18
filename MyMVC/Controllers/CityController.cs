@@ -23,13 +23,12 @@ namespace MyMVC.Controllers
             return View();
         }
 
-        // GET: CityController/Create
+        [HttpGet]
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: CityController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(City model)
@@ -45,7 +44,7 @@ namespace MyMVC.Controllers
             }
         }
 
-        // GET: CityController/Edit/5
+
         public ActionResult Edit(int id)
         {
             return View();
