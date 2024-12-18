@@ -15,7 +15,11 @@ namespace MyMVC.Service
         }
         public string CityAdd(City city)
         {
-            throw new NotImplementedException();
+            using (SqlConnection db = new SqlConnection(config["db"]))
+            {
+                db.Execute("pCity;3", new { @name = city.name}, commandType: CommandType.StoredProcedure);
+                return "ok";
+            }
         }
 
         public IEnumerable<City> GetAllCity()

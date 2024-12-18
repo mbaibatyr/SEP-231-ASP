@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MyMVC.Abstract;
+using MyMVC.Models;
 
 namespace MyMVC.Controllers
 {
@@ -13,7 +14,7 @@ namespace MyMVC.Controllers
         }
         public ActionResult Index()
         {
-            return Json(service.GetAllCity());
+            return View(service.GetAllCity());
         }
 
         // GET: CityController/Details/5
@@ -31,10 +32,11 @@ namespace MyMVC.Controllers
         // POST: CityController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(City model)
         {
             try
             {
+                service.CityAdd(model);
                 return RedirectToAction(nameof(Index));
             }
             catch
