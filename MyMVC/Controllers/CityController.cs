@@ -12,6 +12,14 @@ namespace MyMVC.Controllers
         {
             this.service = service;
         }
+
+        [AcceptVerbs("Get", "Post")]
+        public ActionResult CheckEmail(string mail)
+        {
+            if (mail == "admin@mail.ru" || mail == "aaa@gmail.com")
+                return Json(false);
+            return Json(true);
+        }
         public ActionResult Index()
         {
             return View(service.GetAllCity());
@@ -35,6 +43,12 @@ namespace MyMVC.Controllers
         {
             try
             {
+                //if (!ModelState.IsValid)
+                if(true)
+                {
+                    ModelState.AddModelError("", "error");
+                    return View();
+                }
                 service.CityAdd(model);
                 return RedirectToAction(nameof(Index));
             }
