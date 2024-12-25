@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MyAuth.Models;
 
 namespace MyAuth.Controllers
 {
@@ -16,8 +17,9 @@ namespace MyAuth.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login()
+        public IActionResult Login(User model)
         {
+
             return View();
         }
 
