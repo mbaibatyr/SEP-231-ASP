@@ -32,7 +32,10 @@ namespace MyMVC.Service
 
         public City GetCityById(string id)
         {
-            throw new NotImplementedException();
+            using (SqlConnection db = new SqlConnection(config["db"]))
+            {
+                return db.Query<City>("pCity;2", new { id = id}, commandType: CommandType.StoredProcedure).FirstOrDefault();
+            }
         }
     }
 }

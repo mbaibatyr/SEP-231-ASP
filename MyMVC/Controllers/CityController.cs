@@ -44,7 +44,7 @@ namespace MyMVC.Controllers
             try
             {
                 //if (!ModelState.IsValid)
-                if(true)
+                if (true)
                 {
                     ModelState.AddModelError("", "error");
                     return View();
@@ -82,7 +82,10 @@ namespace MyMVC.Controllers
         // GET: CityController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var result = service.GetCityById(id.ToString());
+            if (result != null)
+                return View(result);
+            return RedirectToAction(nameof(Index));
         }
 
         // POST: CityController/Delete/5

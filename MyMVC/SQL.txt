@@ -48,3 +48,9 @@ ALTER proc [dbo].[pCity];3 -- CityAdd
 as
 insert into city (name)
 values (@name)
+
+CREATE proc [dbo].[pCity];4 -- CityDel
+@id int
+as
+DELETE FROM City
+WHERE id = @id

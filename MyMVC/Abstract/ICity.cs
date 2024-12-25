@@ -7,5 +7,6 @@ namespace MyMVC.Abstract
         IEnumerable<City> GetAllCity();
         City GetCityById(string id);
         string CityAdd(City city);
+        string CityDel(string id);
     }
 }

@@ -11,10 +11,10 @@ namespace MyMVC.Models
         [MaxLength(5, ErrorMessage = "not more 5")]
         public string name { get; set; }
 
-        [DataType(DataType.Date)]
-        public DateTime dt { get; set; }
+        //[DataType(DataType.Date)]
+        //public DateTime dt { get; set; }
 
-        [Remote(action: "CheckEmail", controller: "City", ErrorMessage = "Email уже используется")]
-        public string mail { get; set; }
+        //[Remote(action: "CheckEmail", controller: "City", ErrorMessage = "Email уже используется")]
+        //public string mail { get; set; }
     }
 }
