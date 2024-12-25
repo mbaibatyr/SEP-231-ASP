@@ -91,10 +91,11 @@ namespace MyMVC.Controllers
         // POST: CityController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(City model)
         {
             try
             {
+                service.CityDel(model.id.ToString());
                 return RedirectToAction(nameof(Index));
             }
             catch

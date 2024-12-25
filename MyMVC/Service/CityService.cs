@@ -22,6 +22,15 @@ namespace MyMVC.Service
             }
         }
 
+        public string CityDel(string id)
+        {
+            using (SqlConnection db = new SqlConnection(config["db"]))
+            {
+                db.Execute("pCity;4", new { @id = id }, commandType: CommandType.StoredProcedure);
+                return "ok";
+            }
+        }
+
         public IEnumerable<City> GetAllCity()
         {
             using (SqlConnection db = new SqlConnection(config["db"]))
