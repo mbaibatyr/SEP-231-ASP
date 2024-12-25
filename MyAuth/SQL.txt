@@ -1,0 +1,30 @@
+﻿create table Users
+(
+	id int primary key identity,
+	[login] varchar(100),
+	[psw] varchar(100),
+	created datetime default(getdate()),
+	[role] varchar(100)
+)
+
+
+create proc pUsers
+@login varchar(100),
+@psw varchar(100)
+as
+SELECT id,
+	[login],
+	[psw],
+	created,
+	[role]
+FROM Users
+WHERE [login] = @login
+	and psw = @psw
+
+create proc pUsers;2
+@login varchar(100),
+@psw varchar(100),
+@role varchar(100)
+as
+insert into Users (login, psw, role)
+values (@login, @psw, @role)
