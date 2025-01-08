@@ -21,10 +21,32 @@ FROM Users
 WHERE [login] = @login
 	and psw = @psw
 
-create proc pUsers;2
+create proc [dbo].[pUsers];2 --'user3', '1234', 'admin'
 @login varchar(100),
 @psw varchar(100),
 @role varchar(100)
 as
-insert into Users (login, psw, role)
-values (@login, @psw, @role)
+if exists(
+			SELECT *
+			FROM Users
+			WHERE [login] = @login
+		)
+		SELECT '1'-- уже существует
+else
+	begin
+		insert into Users (login, psw, role)
+		values (@login, @psw, @role)
+		select '0'-- успешно добавлен
+	end
+
+  create table [Role]
+  (
+	 id int identity primary key,
+	 name varchar(20)
+  )
+
+ create proc pRole
+  AS
+  SELECT name id, name
+  FROM [Role]
+  ORDER BY name

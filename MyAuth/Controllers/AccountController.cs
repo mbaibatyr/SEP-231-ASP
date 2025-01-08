@@ -18,12 +18,6 @@ namespace MyAuth.Controllers
             this.service = service;
         }
 
-        public IActionResult Index()
-        {           
-
-            return View();
-        }
-
         [HttpGet, AllowAnonymous]
         public IActionResult Login()
         {            
@@ -47,5 +41,29 @@ namespace MyAuth.Controllers
             return View();
         }
 
+        [HttpGet, AllowAnonymous]
+        public IActionResult SignUp()
+        {
+            ViewData["GetRoles"] = service.GetRoles();
+            return View();
+        }
+
+        [HttpPost, AllowAnonymous]
+        public IActionResult SignUp(SignUpRequest model)
+        {
+            var result = service.SignUp(model);
+            if (result)
+            {
+                //var claims = new[] { new Claim(ClaimTypes.Name, model.login) };
+                //var identity = new ClaimsIdentity(claims,
+                //  CookieAuthenticationDefaults.AuthenticationScheme);
+                //HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+                //    new ClaimsPrincipal(identity));
+                return Redirect("~/Account/Login");
+            }
+            ModelState.AddModelError("", "Login registered already");
+            ViewData["GetRoles"] = service.GetRoles();
+            return View();
+        }
     }
 }
