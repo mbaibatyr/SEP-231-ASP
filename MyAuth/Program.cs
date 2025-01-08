@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
+using MyAuth.Abstract;
+using MyAuth.Service;
 
 namespace MyAuth
 {
@@ -21,7 +23,7 @@ namespace MyAuth
                     });
 
             builder.Services.AddControllersWithViews();
-
+            builder.Services.AddScoped<IUser, UserService>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
