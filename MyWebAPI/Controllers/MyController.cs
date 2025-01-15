@@ -48,7 +48,7 @@ namespace MyWebAPI.Controllers
         {
             using (SqlConnection db = new SqlConnection("Server=210-17;Database=MyDB;Trusted_Connection=True;TrustServerCertificate=True"))
             {
-                //DynamicParameters p = new DynamicParameters(book);
+                DynamicParameters p = new DynamicParameters(book);
                 db.Execute("pBook", new DynamicParameters(book), commandType: System.Data.CommandType.StoredProcedure);
                 return Ok($"Updated");
             }
