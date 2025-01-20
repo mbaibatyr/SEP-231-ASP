@@ -4,10 +4,11 @@ using Microsoft.Data.SqlClient;
 using MyWebAPI.Model;
 using System.Xml.Linq;
 using Dapper;
+using System.Text;
 
 namespace MyWebAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class MyController : ControllerBase
     {
@@ -41,7 +42,7 @@ namespace MyWebAPI.Controllers
                 p.Add("Content", book.Content);
                 db.Execute("pBook", p, commandType: System.Data.CommandType.StoredProcedure);
                 return Ok($"Updated");
-            }            
+            }
         }
         [HttpPut, Route("Method_4_1")]
         public ActionResult Method_4_1(Book book)
@@ -52,6 +53,17 @@ namespace MyWebAPI.Controllers
                 db.Execute("pBook", new DynamicParameters(book), commandType: System.Data.CommandType.StoredProcedure);
                 return Ok($"Updated");
             }
+        }
+
+        [HttpPost, Route("Method_4_2")]
+        public ActionResult Method_4_2(List<Book> books)
+        {
+            StringBuilder sb = new StringBuilder();            
+            foreach (Book book in books)
+            {
+                sb.AppendLine($"{book.Name} - {book.Author}");
+            }
+            return Ok(sb.ToString());
         }
     }
 }
