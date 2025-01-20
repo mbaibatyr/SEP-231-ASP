@@ -120,5 +120,17 @@ namespace MyWebAPI.Controllers
                 return NoContent();
             else return Ok("ok");
         }
+
+        [HttpPost, Route("Method_11")]
+        public ActionResult Method_11([FromBody] string id)
+        {
+            return Ok(id);
+        }
+
+        [HttpGet, Route("Method_12")]
+        public ActionResult Method_12([FromQuery] City city)
+        {
+            return Ok($"{city.Id}  {city.Name}");
+        }
     }
 }
