@@ -7,6 +7,7 @@ using Dapper;
 using System.Text;
 using System.Net;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace MyWebAPI_BasicAUTH.Controllers
 {
@@ -18,6 +19,10 @@ namespace MyWebAPI_BasicAUTH.Controllers
         [HttpGet, Route("Method_1")]
         public ActionResult Method_1()
         {
+            var claim_psw = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "psw");
+            var psw = claim_psw.Value;
+
+            var Name = User.FindFirst(ClaimTypes.Name)?.Value;
             return Ok("Hello STEP");
         }
 
