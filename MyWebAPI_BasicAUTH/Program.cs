@@ -1,3 +1,6 @@
+using Microsoft.AspNetCore.Authentication;
+using MyWebAPI_BasicAUTH.Auth;
+
 namespace MyWebAPI_BasicAUTH
 {
     public class Program
@@ -9,13 +12,15 @@ namespace MyWebAPI_BasicAUTH
             // Add services to the container.
 
             builder.Services.AddControllers();
+            builder.Services.AddAuthentication("BasicAuthentication")
+              .AddScheme<AuthenticationSchemeOptions, BasicAuth>("BasicAuthentication", null);
 
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
 
+            app.UseAuthentication();
             app.UseAuthorization();
-
 
             app.MapControllers();
 
