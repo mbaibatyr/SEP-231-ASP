@@ -20,7 +20,7 @@ namespace MyWebAPI_BasicAUTH.Auth
                 return AuthenticateResult.Fail("No section Authorization");
             try
             {
-                // "user1;password"
+                // "user1;1234"
                 var value = AuthenticationHeaderValue.Parse(Request.Headers["Authorization"]);
                 var credValue = Convert.FromBase64String(value.Parameter);
                 var credArray = Encoding.UTF8.GetString(credValue).Split(':');

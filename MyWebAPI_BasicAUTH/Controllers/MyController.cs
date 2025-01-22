@@ -6,11 +6,13 @@ using System.Xml.Linq;
 using Dapper;
 using System.Text;
 using System.Net;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MyWebAPI_BasicAUTH.Controllers
 {
     [Route("[controller]")]
     [ApiController]
+    [Authorize]
     public class MyController : ControllerBase
     {
         [HttpGet, Route("Method_1")]
@@ -19,7 +21,7 @@ namespace MyWebAPI_BasicAUTH.Controllers
             return Ok("Hello STEP");
         }
 
-        [HttpGet, Route("Method_2/{name}/{id}")]
+        [HttpGet, Route("Method_2/{name}/{id}"), AllowAnonymous]
         public ActionResult Method_2(string name, string id)
         {
             return Ok($"Hello {name} - {id}");
