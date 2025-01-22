@@ -7,9 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWebFormsCRUD", "MyWebForm
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMVC", "MyMVC\MyMVC.csproj", "{5172A87C-6384-48F4-97C8-4E0E984D34FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAuth", "MyAuth\MyAuth.csproj", "{D27EA0C9-6BB0-48EF-BA1E-BBE708A64C26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyAuth", "MyAuth\MyAuth.csproj", "{D27EA0C9-6BB0-48EF-BA1E-BBE708A64C26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWebAPI", "MyWebAPI\MyWebAPI.csproj", "{BF407F8F-F545-4625-91BA-94D928A697DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWebAPI", "MyWebAPI\MyWebAPI.csproj", "{BF407F8F-F545-4625-91BA-94D928A697DE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWebAPI_BasicAUTH", "MyWebAPI_BasicAUTH\MyWebAPI_BasicAUTH.csproj", "{71807D88-09F3-446F-A184-0A199AF661E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{BF407F8F-F545-4625-91BA-94D928A697DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF407F8F-F545-4625-91BA-94D928A697DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF407F8F-F545-4625-91BA-94D928A697DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71807D88-09F3-446F-A184-0A199AF661E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71807D88-09F3-446F-A184-0A199AF661E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71807D88-09F3-446F-A184-0A199AF661E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71807D88-09F3-446F-A184-0A199AF661E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
