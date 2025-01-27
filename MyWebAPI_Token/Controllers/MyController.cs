@@ -53,7 +53,7 @@ namespace MyWebAPI_Token.Controllers
                     config["Jwt:Issuer"],
                     //claims,
                     null,
-                    expires: DateTime.Now.AddMinutes(50),
+                    expires: DateTime.Now.AddMinutes(1),
                     signingCredentials: credentials);
 
                 var sToken = new JwtSecurityTokenHandler().WriteToken(token);
