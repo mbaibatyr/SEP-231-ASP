@@ -1,3 +1,7 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+
 namespace MyWebAPI_Token
 {
     public class Program
@@ -5,6 +9,7 @@ namespace MyWebAPI_Token
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            var configuration = builder.Configuration;
 
             builder.Services.AddAuthentication(z =>
             {
