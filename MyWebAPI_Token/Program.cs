@@ -38,6 +38,7 @@ namespace MyWebAPI_Token
 
             // Configure the HTTP request pipeline.
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
 

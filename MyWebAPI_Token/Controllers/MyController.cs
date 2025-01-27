@@ -19,12 +19,13 @@ namespace MyWebAPI_Token.Controllers
             this.config = config;
         }
 
-
         [HttpGet, Route("getDateTime") ]
         public ActionResult getDateTime()
         {
             return Ok(DateTime.Now.ToString("dd.MM.yyyy"));
         }
+
+        [HttpPost, Route("GetToken"), AllowAnonymous]
         public ActionResult GetToken(UserModel model)
         {
             try
@@ -50,9 +51,9 @@ namespace MyWebAPI_Token.Controllers
 
                 var token = new JwtSecurityToken(config["Jwt:Issuer"],
                     config["Jwt:Issuer"],
-                    claims,
-                    //null,
-                    expires: DateTime.Now.AddMinutes(5),
+                    //claims,
+                    null,
+                    expires: DateTime.Now.AddMinutes(50),
                     signingCredentials: credentials);
 
                 var sToken = new JwtSecurityTokenHandler().WriteToken(token);
@@ -68,7 +69,7 @@ namespace MyWebAPI_Token.Controllers
                 return Ok(new ReturnStatus
                 {
                     status = StatusEnum.ERROR,
-                    result = "error",
+                    result = "ERROR",
                     error = err.Message
                 });
             }
