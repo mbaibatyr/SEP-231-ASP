@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWebAPI", "MyWebAPI\MyWebA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWebAPI_BasicAUTH", "MyWebAPI_BasicAUTH\MyWebAPI_BasicAUTH.csproj", "{71807D88-09F3-446F-A184-0A199AF661E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWebAPI_Token", "MyWebAPI_Token\MyWebAPI_Token.csproj", "{F9153BD0-CB3A-4FF7-977C-CFABBADFE1D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWebAPI_Token", "MyWebAPI_Token\MyWebAPI_Token.csproj", "{F9153BD0-CB3A-4FF7-977C-CFABBADFE1D5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWebAPI_Windows", "MyWebAPI_Windows\MyWebAPI_Windows.csproj", "{ABB4FE55-CCE0-4BE9-AF78-8B8B4A5DE6BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{F9153BD0-CB3A-4FF7-977C-CFABBADFE1D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9153BD0-CB3A-4FF7-977C-CFABBADFE1D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9153BD0-CB3A-4FF7-977C-CFABBADFE1D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABB4FE55-CCE0-4BE9-AF78-8B8B4A5DE6BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABB4FE55-CCE0-4BE9-AF78-8B8B4A5DE6BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABB4FE55-CCE0-4BE9-AF78-8B8B4A5DE6BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABB4FE55-CCE0-4BE9-AF78-8B8B4A5DE6BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
