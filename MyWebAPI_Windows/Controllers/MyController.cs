@@ -11,7 +11,7 @@ namespace MyWebAPI_Windows.Controllers
         [HttpGet, Route("Test")]
         public ActionResult Test() 
         {
-            var username = User.Identity.Name.Split('\\')[1];
+            var username = User.Identity.Name.Split('\\')[1]; /*   step\байбатыровм   */
             return Ok(username);
         }
     }
