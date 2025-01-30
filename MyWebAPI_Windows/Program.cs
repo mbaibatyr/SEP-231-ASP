@@ -7,14 +7,11 @@ namespace MyWebAPI_Windows
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
-            builder.Services.AddControllers();
             builder.Services.AddAuthentication(NegotiateDefaults.AuthenticationScheme)
-                    .AddNegotiate();                      
+                    .AddNegotiate();
+            builder.Services.AddControllers();
 
-            var app = builder.Build();
-
-            // Configure the HTTP request pipeline.
+            var app = builder.Build();            
 
             app.UseAuthentication();
             app.UseAuthorization();
