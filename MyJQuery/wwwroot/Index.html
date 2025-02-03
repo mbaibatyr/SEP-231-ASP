@@ -13,14 +13,28 @@
     <!--<script src="Scripts/MyJS.js"></script>-->
     <script>
         $(document).ready(function () {
-            var name = $("#tbTest").val();
             $("#btn1").click(function () {
                 $.ajax
                     ({
                         type: "GET",
-                        url: "http://localhost:5099/test/sayhello/" + name,
+                        url: "http://localhost:5099/test/getCityAll",
                         success: function (data) {
-                            console.log(data);
+                            $("#cbCity").empty();
+                            for (let i = 0; i < data.length; i++) {
+                                $("#cbCity").append('<option value=' + data[i].id + '>' + data[i].name + '</option >');
+                            };
+                            //let html = '';
+                            //html += "<table border='1' cellpadding='1' cellspacing='1' width='500'>";
+                            //html += "<tr bgcolor='#ffd400'>";
+                            //html += "<td class='text-center'>id</td>"
+                            //html += "<td class='text-center'>name</td>";
+                            //html += "</tr>";
+                            //$.each(data, function (i, item) {
+                            //    html += "<tr><td>" + item.id + "</td>" +
+                            //        "<td>" + item.name + "</td></tr>";
+                            //});
+                            //html += "</table >";
+                            //$("#divTest").html(html);
                         },
                         error: function () {
                             console.log("error")
@@ -28,6 +42,12 @@
                     });
             });
 
+            $("#cbCity").change(function () {
+                var val = $("#cbCity").val();
+                alert(val);
+                var text = $("#cbCity").find('option:selected').text();
+                alert(text);
+            });
         })
     </script>
 </head>
