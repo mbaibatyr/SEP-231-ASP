@@ -4,9 +4,7 @@ import React, { useEffect, useState } from 'react';
 const FetchData = () => {
 
   const [forecast, setforecast] = useState([])
-  const [loading, setLoading] = useState(true);
-
-  const fetch = () => {
+  const fetchData = () => {
     const requestOptions = {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' }
@@ -49,19 +47,18 @@ const FetchData = () => {
     );
   }
 
-  // render() {
-  //   let contents = this.state.loading
-  //     ? <p><em>Loading...</em></p>
-  //     : FetchData.renderForecastsTable(this.state.forecasts);
 
   useEffect(() => {
-    fetch();
+
+    fetchData();
   }, []);
+
+
   return (
     <div>
       <h1 id="tabelLabel" >Weather forecast</h1>
       <p>This component demonstrates fetching data from the server.</p>
-      {/* {contents} */}
+      {renderForecastsTable(forecast)}
     </div>
   );
 
