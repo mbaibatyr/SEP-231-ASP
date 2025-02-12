@@ -7,23 +7,30 @@ const Home = () => {
   const [loginAdd, setLoginAdd] = useState('123')
   const [mySelect, setMySelect] = useState('');
   const handleChangeMySelect = (value) => {
-    console.log(value)
+    //    console.log(value)
     setMySelect(value);
   };
 
-  const [dataSelect, setDataSelect] = useState([
-    {
-      "value": "1",
-      "text": "qwerty"
-    },
-    {
-      "value": "2",
-      "text": "asdfgh"
-    },
-  ]);
+  const [dataSelect, setDataSelect] = useState([]);
+
+  const FillSelect = () => {
+    const requestOptions = {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' }
+    };
+    fetch(`http://localhost:36449/My/FillSelect`, requestOptions)
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        //console.log(data)
+        setDataSelect(data);
+      })
+  }
 
   const MyClick = () => {
-    setLoginAdd('hello step123')
+    //1setLoginAdd('hello step123')
+    FillSelect();
   }
 
   return (
