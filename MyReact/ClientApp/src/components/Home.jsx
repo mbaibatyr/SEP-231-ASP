@@ -7,8 +7,20 @@ const Home = () => {
   const [loginAdd, setLoginAdd] = useState('123')
   const [mySelect, setMySelect] = useState('');
   const handleChangeMySelect = (value) => {
+    console.log(value)
     setMySelect(value);
   };
+
+  const [dataSelect, setDataSelect] = useState([
+    {
+      "value": "1",
+      "text": "qwerty"
+    },
+    {
+      "value": "2",
+      "text": "asdfgh"
+    },
+  ]);
 
   const MyClick = () => {
     setLoginAdd('hello step123')
@@ -48,11 +60,9 @@ const Home = () => {
         onChange={handleChangeMySelect}
         filterOption={(input, option) => option.children.toLowerCase().includes(input.toLowerCase())}
       >
-        <Option key='4'>BUSINESS ANALYST</Option>
-        <Option key='2'>BUSINESS CUSTOMER</Option>
-        <Option key='3'>CHANGE DEVELOPER</Option>
-        <Option key='5'>DEVELOPER</Option>
-        <Option key='6'>GUEST</Option>
+        {dataSelect.map((z) => (
+          <Option key={z.value}>{z.text}</Option>
+        ))}
       </Select>
     </div>
   );
