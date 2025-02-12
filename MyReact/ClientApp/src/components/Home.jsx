@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Button, Input, Select } from 'antd';
+import { useState, useEffect } from 'react';
+import { Button, Input, Select, notification } from 'antd';
 import { CheckOutlined } from '@ant-design/icons';
 
 const Home = () => {
@@ -7,8 +7,16 @@ const Home = () => {
   const [loginAdd, setLoginAdd] = useState('123')
   const [mySelect, setMySelect] = useState('');
   const handleChangeMySelect = (value) => {
-    //    console.log(value)
     setMySelect(value);
+
+    notification.info({
+      message: "Info",
+      description: (
+        <>
+          {value}
+        </>
+      )
+    });
   };
 
   const [dataSelect, setDataSelect] = useState([]);
@@ -32,6 +40,10 @@ const Home = () => {
     //1setLoginAdd('hello step123')
     FillSelect();
   }
+
+  useEffect(() => {
+    FillSelect();
+  }, []);
 
   return (
     <div>
