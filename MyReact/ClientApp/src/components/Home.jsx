@@ -50,10 +50,10 @@ const Home = () => {
 
       <Select
         style={{
-          width: 252, marginLeft: 145
+          width: 252, marginLeft: 10
         }}
         showSearch
-        status="warning"
+        status="error"
         //defaultValue="2"
         value={mySelect}
         optionFilterProp="children"
