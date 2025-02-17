@@ -22,5 +22,19 @@ namespace MySOAP2
         {
             return "Привет " + name;
         }
+
+        [WebMethod]
+        public string Calc(string a, string b, string oper)
+        {
+            switch (oper)
+            {
+                case "+":
+                    return (int.Parse(a) + int.Parse(b)).ToString();                    
+                case "-":
+                    return (int.Parse(a) - int.Parse(b)).ToString();                    
+                default:
+                    return "";                    
+            }            
+        }
     }
 }
